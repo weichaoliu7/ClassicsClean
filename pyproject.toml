@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "classicsclean"
+version = "1.1.0"
+description = "古籍扫描件白底清洁工具：纸面尽量拉白，笔画一个灰阶都不动"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.1",
+    "pymupdf>=1.24",
+    "pikepdf>=9.0",
+    "pillow>=11.0",
+    "tkinterdnd2>=0.4",
+]
+# 形态学 / 滤波 / 重采样算子由 classicsclean.morphology 以纯 numpy 实现，
+# 运行期不依赖 OpenCV（其二进制占 exe 体积一半以上，已于 v1.2 移除）。
+
+[project.scripts]
+classicsclean = "classicsclean.apps.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# 注意：测试配置统一放在 pytest.ini（pytest 会优先读它），此处不再重复声明。

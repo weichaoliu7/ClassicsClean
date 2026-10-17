@@ -1,0 +1,12 @@
+# ClassicsClean 运行依赖（算法与图形界面都需要）
+#
+# 形态学 / 滤波 / 重采样算子由 classicsclean.morphology 以纯 numpy 实现，
+# 不依赖 OpenCV（opencv-python 的二进制占 exe 体积一半以上，已于 v1.2 移除）。
+numpy==2.5.3
+pymupdf==1.28.2
+pikepdf==10.16.0
+pillow==12.3.0
+tkinterdnd2==0.4.3
+
+# 说明：打包出的 ClassicsClean.exe 已内含以上全部依赖，目标机无需安装任何东西。
+# cv2 仅出现在 requirements-dev.txt（tests/unit/test_morphology.py 的对照测试用）。

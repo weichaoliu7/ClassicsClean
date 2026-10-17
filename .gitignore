@@ -1,0 +1,24 @@
+# ---------- 构建产物 ----------
+dist/
+build/
+.cache/
+.toolchain/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# ---------- 报告：保留人读的 md / csv，忽略机读中间文件 ----------
+reports/*
+!reports/*.md
+!reports/*.csv
+
+# ---------- 编辑器与系统 ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
